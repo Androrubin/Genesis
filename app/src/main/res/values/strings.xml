@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Genesis</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_community">Community</string>
+    <string name="title_notifications">Aid</string>
+</resources>
