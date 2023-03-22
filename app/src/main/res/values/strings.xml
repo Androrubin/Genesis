@@ -16,5 +16,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="discp1">We can\'t wait to help you welcome your little one into the world</string>
+    <string name="desc2">Your health and your baby\'s health are our top priorities.Let us help you keep track of your medication and health checkups for a worry-free pregnancy.</string>
+    <string name="desc3">We understand how overwhelming it can be to keep track of appointments and resources. Let\'s make it simple and easy to manage.</string>
+    <string name="desc5">Let our app be your go-to resource for creating a personalized exercise schedule and tracking your progress towards a healthier, happier you.</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    
+    <string-array name="child_age">
+        <item>0 year</item>
+        <item>1 year</item>
+        <item>2 year</item>
+        <item>3 year</item>
+    </string-array>
+
 
 </resources>

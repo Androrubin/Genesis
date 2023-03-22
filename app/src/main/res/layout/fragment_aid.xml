@@ -7,7 +7,7 @@
     tools:context=".ui.notifications.NotificationsFragment">
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/text_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,5 +18,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="24dp"
+        android:background="#8F94E4"
+        android:backgroundTint="@color/lavender"
+        android:padding="6dp"
+
+        android:text="Get the location of nearby hospitals"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:circularflow_radiusInDP="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
