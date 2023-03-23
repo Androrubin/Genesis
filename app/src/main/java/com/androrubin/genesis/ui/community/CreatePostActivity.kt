@@ -45,6 +45,7 @@ class CreatePostActivity : AppCompatActivity() {
                 postDescription.requestFocus()
             } else {
                 val data = hashMapOf(
+                    "postID" to "$uid$current",
                     "posterName" to posterName.text.trim().toString(),
                     "description" to postDescription.text.trim().toString(),
                     "date" to current.toString(),

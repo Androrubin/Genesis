@@ -1,24 +1,45 @@
 package com.androrubin.genesis.ui.community
 
+import android.app.Activity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
+import android.view.View
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androrubin.genesis.R
 import com.androrubin.genesis.ui.community.adaptersAndDC.CommentsDC
+import com.androrubin.genesis.ui.community.adaptersAndDC.CommunityDC
+import com.google.android.material.internal.ViewUtils.hideKeyboard
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.*
+import com.google.firebase.firestore.EventListener
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PostViewActivity : AppCompatActivity() {
 
+    private lateinit var db: FirebaseFirestore
+    private lateinit var mAuth: FirebaseAuth
     lateinit var commentorNameList: Array<String>
-    lateinit var commentsList : Array<String>
-    lateinit var comments : ArrayList<CommentsDC>
-    private lateinit var posterName : TextView
-    private lateinit var description : TextView
-    private lateinit var upvotes : TextView
-    private lateinit var downvotes : TextView
-    private lateinit var noOfcomments : TextView
-    private lateinit var commentsRV : RecyclerView
+    lateinit var commentsList: Array<String>
+    lateinit var comments: ArrayList<CommentsDC>
+    private lateinit var posterName: TextView
+    private lateinit var description: TextView
+    private lateinit var upvotes: TextView
+    private lateinit var downvotes: TextView
+    private lateinit var noOfcomments: TextView
+    private lateinit var commentsRV: RecyclerView
+    private lateinit var commentPostEdt: EditText
+    private lateinit var postBtn: ImageView
+    private var postID: String?=null
+    lateinit var adapter: CommentsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,28 +77,86 @@ class PostViewActivity : AppCompatActivity() {
         downvotes = findViewById(R.id.downvotesEdt)
         noOfcomments = findViewById(R.id.commentsEdt)
         commentsRV = findViewById(R.id.commentsRv)
+        commentPostEdt = findViewById(R.id.enterCommentEdt)
+        postBtn = findViewById(R.id.commentSendBtn)
+
         commentsRV.layoutManager = LinearLayoutManager(this)
         posterName.text = intent.getStringExtra("posterName")
         description.text = intent.getStringExtra("description")
         upvotes.text = intent.getStringExtra("upvotes")
         downvotes.text = intent.getStringExtra("downvotes")
         noOfcomments.text = intent.getStringExtra("comments")
+        postID = intent.getStringExtra("postID")
 
         comments = arrayListOf<CommentsDC>()
 
+        val time = Calendar.getInstance().time
+        val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:SS")
+        val current = formatter.format(time)
         getComments()
+        adapter = CommentsAdapter(comments)
+        commentsRV.adapter = adapter
+
+        if (TextUtils.isEmpty(commentPostEdt.getText()?.trim().toString())) {
+            postBtn.isClickable = false
+            postBtn.setImageResource(R.drawable.baseline_send_24)
+        } else {
+            postBtn.isClickable = true
+            postBtn.setImageResource(R.drawable.baseline_send_active_24)
+        }
+        postBtn.setOnClickListener {
+
+            val data = hashMapOf(
+                "commentorName" to posterName.text.trim().toString(),
+                "comment" to commentPostEdt.text.trim().toString(),
+                "date" to current.toString(),
+            )
+            db = FirebaseFirestore.getInstance()
+            db.collection("Community Posts").document("$postID").collection("Comments")
+                .add(data)
+                .addOnSuccessListener { docRef ->
+                    Log.d("Data Addition", "DocumentSnapshot written with ID: ${docRef}.id")
+                    //Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
 
 
-
+                }
+                .addOnFailureListener { e ->
+                    Log.w("Data Addition", "Error adding document", e)
+                }
+            getComments()
+            adapter.notifyDataSetChanged()
+            commentPostEdt.setText("")
+            //hideKeyboard()
+        }
     }
+//    fun Activity.hideKeyboard() {
+//
+//        hideKeyboard(currentFocus ?: View(this))
+//    }
 
     private fun getComments() {
-        for (i in commentorNameList.indices) {
-            val comment =
-                CommentsDC(commentorNameList[i], commentsList[i])
-            comments.add(comment)
-        }
-        val adapter = CommentsAdapter(comments)
-            commentsRV.adapter = adapter
+        db = FirebaseFirestore.getInstance()
+        db.collection("Community Posts").document("$postID").collection("Comments")
+            .orderBy("date", Query.Direction.DESCENDING)
+            .addSnapshotListener(object : EventListener<QuerySnapshot> {
+                override fun onEvent(
+                    value: QuerySnapshot?,
+                    error: FirebaseFirestoreException?
+                ) {
+
+                    if (error != null) {
+                        Log.e("Firestore Error", error.message.toString())
+                        return
+                    }
+                    for (dc: DocumentChange in value?.documentChanges!!) {
+                        if (dc.type == DocumentChange.Type.ADDED) {
+
+                            comments.add(dc.document.toObject(CommentsDC::class.java))
+                        }
+                    }
+                   adapter.notifyDataSetChanged()
+                }
+            })
     }
 }
+

@@ -39,6 +39,7 @@ class CommunityAdapter(private val postList : ArrayList<CommunityDC>) : Recycler
         val currentItem = postList[position]
         holder.posterName.text = currentItem.posterName
         holder.description.text = currentItem.description
+        holder.date.text = currentItem.date
         holder.upvotes.text = currentItem.upvotes
         holder.downvotes.text = currentItem.downvotes
         holder.comments.text = currentItem.comments+" Comments"
@@ -55,6 +56,7 @@ class CommunityAdapter(private val postList : ArrayList<CommunityDC>) : Recycler
 
         val posterName : TextView = itemView.findViewById(R.id.posterNameEdt)
         val description : TextView = itemView.findViewById(R.id.descriptionEdt)
+        val date :TextView = itemView.findViewById(R.id.dateOrTimeEdt)
         val comments : TextView = itemView.findViewById(R.id.commentsEdt)
         val upvotes : TextView = itemView.findViewById(R.id.upvotesEdt)
         val downvotes : TextView = itemView.findViewById(R.id.downvotesEdt)
