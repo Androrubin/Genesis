@@ -18,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Genesis"
         tools:targetApi="31">
+
+        <service android:name=".ui.home.trackers.RightTimerService"/>
         <activity
             android:name=".ui.aid.book_appointment.BookAppointmentActivity"
             android:exported="false" />
@@ -46,6 +48,12 @@
         <activity
             android:name=".Onboarding.AboutApp"
             android:exported="false" />
+
+        <activity
+            android:name=".ui.home.trackers.BreastFeedingTrackerActivity"
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".login_and_splash.SignUpActivity"
             android:exported="false" />

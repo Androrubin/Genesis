@@ -123,7 +123,6 @@ class PostViewActivity : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     Log.w("Data Addition", "Error adding document", e)
                 }
-            getComments()
             adapter.notifyDataSetChanged()
             commentPostEdt.setText("")
             //hideKeyboard()
