@@ -29,5 +29,11 @@
         <item>3 year</item>
     </string-array>
 
+    <string name="date">10th</string>
+    <string name="month">March</string>
+    <string name="pro_text">Protein is critical for ensuring the proper growth of baby’s tissues and organs, including the brain. It also helps with breast and uterine tissue growth during pregnancy. It even plays a role in your increasing blood supply, allowing more blood to be sent to your baby. Your protein needs increase during each trimester of pregnancy. Research suggestsTrusted Source that protein intake during pregnancy should be even higher than some current recommendations. It’s time to ramp up those shrimp fajitas, pork curries, jerk chicken, and salmon teriyaki. You’ll need to eat about 70 to 100 gTrusted Source of protein a day, depending on your weight and which trimester you’re in. Talk to your doctor to see how much you specifically need.</string>
+    <string name="plan_diet">Select as per your choice and mood and compare the nutritional value of your planned diet to the recommended one</string>
+
+
 
 </resources>

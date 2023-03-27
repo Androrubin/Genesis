@@ -11,11 +11,18 @@ import android.widget.Button
 import androidx.core.app.ActivityCompat.finishAffinity
 import com.androrubin.genesis.MainActivity
 import com.androrubin.genesis.R
+import com.androrubin.genesis.databinding.FragmentProfileBinding
+import com.androrubin.genesis.journaling.GetJournal
 import com.androrubin.genesis.login_and_splash.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {
 
+    private var _binding: FragmentProfileBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
     private lateinit var auth : FirebaseAuth
     companion object {
         fun newInstance() = ProfileFragment()
@@ -27,11 +34,19 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        val root: View = binding.root
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        val signOutbtn= view?.findViewById<Button>(R.id.logout)
+
         auth= FirebaseAuth.getInstance()
 
-        signOutbtn?.setOnClickListener {
+        binding.jounalBtn.setOnClickListener {
+            val intent= Intent(context, GetJournal::class.java)
+            startActivity(intent)
+        }
+
+        binding.logout.setOnClickListener {
             auth.signOut()
             val intent= Intent(context, LoginActivity::class.java)
             startActivity(intent)

@@ -23,7 +23,9 @@
     <color name="pastel_yellow">#E5EBB2</color>
     <color name="pastel_violet">#98A8F8</color>
     <color name="lavender">#8F94E4</color>
-
+    <color name="lavender2">#668F94E4</color>
+    <color name="base_color">#9292FF</color>
+    <color name="colorPrimary">#919191</color>
 
 
 </resources>
