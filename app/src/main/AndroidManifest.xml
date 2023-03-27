@@ -18,8 +18,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Genesis"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".NutriComparision"
+            android:exported="false" />
+        <activity
+            android:name=".CustomDiet"
+            android:exported="false" />
+        <activity
+            android:name=".DietChoice"
+            android:exported="false" />
+        <activity
+            android:name=".DietPlanning"
+            android:exported="false" />
+        <activity
+            android:name=".journaling.CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".journaling.RecordJournalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".journaling.GetJournal"
+            android:exported="false" />
         <activity
             android:name=".login_and_splash.CreateProfile"
             android:exported="false" />

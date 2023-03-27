@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.androrubin.genesis.DietPlanning
 import com.androrubin.genesis.R
 import com.androrubin.genesis.databinding.FragmentHomeBinding
 import com.androrubin.genesis.login_and_splash.LoginActivity
@@ -34,19 +35,24 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+
+
+         binding.cardDiet.setOnClickListener {
+
+             val intent = Intent(context,DietPlanning::class.java)
+             startActivity(intent)
+
+         }
+
+
+
+             return root
         }
 
 
 
 
-        return root
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}
+
