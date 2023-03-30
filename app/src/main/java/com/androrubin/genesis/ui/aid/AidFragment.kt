@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.androrubin.genesis.databinding.FragmentAidBinding
 import com.androrubin.genesis.map_work.MapsActivity
 import com.androrubin.genesis.ui.aid.book_appointment.BookAppointmentActivity
+import com.androrubin.genesis.ui.aid.book_appointment.ScheduleAppointment
+import com.androrubin.genesis.ui.aid.book_caretaker.ScheduleCareTaker
 
 class AidFragment : Fragment() {
 
@@ -30,12 +32,9 @@ class AidFragment : Fragment() {
         _binding = FragmentAidBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotification
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         binding.bookAppointmentCard.setOnClickListener {
-            val intent = Intent(context, BookAppointmentActivity::class.java)
+            val intent = Intent(context, ScheduleAppointment::class.java)
             startActivity(intent)
         }
 
@@ -44,6 +43,10 @@ class AidFragment : Fragment() {
             val intent = Intent(context, MapsActivity::class.java)
             startActivity(intent)
 
+        }
+        binding.bookCaretakerCard.setOnClickListener {
+            val intent = Intent(context, ScheduleCareTaker::class.java)
+            startActivity(intent)
         }
         return root
     }

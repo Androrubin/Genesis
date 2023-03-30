@@ -1,9 +1,10 @@
-package com.androrubin.genesis.ui.aid.book_appointment
+package com.androrubin.genesis.ui.aid.book_caretaker
 
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.ViewGroup
@@ -12,20 +13,18 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androrubin.genesis.R
 import com.androrubin.genesis.databinding.ActivityBookAppointmentBinding
 
-
-class BookAppointmentActivity : AppCompatActivity() {
+class BookCareTakerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBookAppointmentBinding
     lateinit var doctorNameList: Array<String>
     lateinit var yoeList: Array<String>
     lateinit var specializationList: Array<String>
-    lateinit var doctors: ArrayList<AvailableDoctorsDC>
+    lateinit var doctors: ArrayList<AvailableCareTakersDC>
     private lateinit var availableDoctorsListRV: RecyclerView
     lateinit var sheet: FrameLayout
     private lateinit var date: String
@@ -48,28 +47,28 @@ class BookAppointmentActivity : AppCompatActivity() {
         }
 
         doctorNameList = arrayOf(
-            "Dr Amelia",
-            "Dr Ava",
-            "Dr Avery",
-            "Dr Asher",
-            "Dr Aiden",
-            "Dr Abigail",
-            "Dr Anthony",
-            "Dr Aria",
-            "Dr Aurora",
-            "Dr Angel"
+            "Amelia",
+            "Ava",
+            "Avery",
+            "Asher",
+            "Aiden",
+            "Abigail",
+            "Anthony",
+            "Aria",
+            "Aurora",
+            "Angel"
         )
         yoeList = arrayOf(
+            "2 years of experience",
             "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience",
-            "10 years of experience"
+            "4 years of experience",
+            "5 years of experience",
+            "7 years of experience",
+            "3 years of experience",
+            "2 years of experience",
+            "4 years of experience",
+            "6 years of experience",
+            "3 years of experience"
         )
         specializationList = arrayOf(
             "Gynaecologist",
@@ -84,7 +83,7 @@ class BookAppointmentActivity : AppCompatActivity() {
             "Pediatrician"
         )
 
-        doctors = arrayListOf<AvailableDoctorsDC>()
+        doctors = arrayListOf<AvailableCareTakersDC>()
 
         getAvailableDoctors()
     }
@@ -92,18 +91,16 @@ class BookAppointmentActivity : AppCompatActivity() {
     private fun getAvailableDoctors() {
         for (i in doctorNameList.indices) {
             val comment =
-                AvailableDoctorsDC(doctorNameList[i], yoeList[i], specializationList[i])
+                AvailableCareTakersDC(doctorNameList[i], yoeList[i], specializationList[i])
             doctors.add(comment)
         }
-        val adapter = AvailableDoctorsAdapter(doctors)
+        val adapter = AvailableCaretakersAdapter(doctors)
         availableDoctorsListRV.adapter = adapter
 
-        adapter.setOnItemClickListener(object : AvailableDoctorsAdapter.onItemClickListener {
+        adapter.setOnItemClickListener(object : AvailableCaretakersAdapter.onItemClickListener {
             override fun onItemClick(position: Int) {
 
 //                 Toast.makeText(this@BookAppointmentActivity, "You Clicked on item no. $position", Toast.LENGTH_SHORT).show()
-
-
                 showDialog(
                     doctors[position].doctorName,
                     doctors[position].specialization,
@@ -133,12 +130,14 @@ class BookAppointmentActivity : AppCompatActivity() {
         val button = dialog.findViewById<Button>(R.id.bookAppointmentBtn)
         button.setOnClickListener {
             startActivity(
-                Intent(this, AppointmentPaymentActivity::class.java)
+
+                Intent(this, CareTakerPaymentActivity::class.java)
                     .putExtra("Date", date)
                     .putExtra("Time", time)
                     .putExtra("DoctorName", doctorName.text.toString())
                     .putExtra("Speciality", speciality.text.toString())
                     .putExtra("Yoe", yoe.text.toString())
+
             )
         }
         val closeBtn = dialog.findViewById<ImageView>(R.id.closeBtn)

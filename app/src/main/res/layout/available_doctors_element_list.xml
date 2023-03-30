@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="5dp"
+    android:layout_marginVertical="10dp"
     android:layout_margin="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,13 +24,13 @@
 
 
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/doctor_image" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/doctor_image" />
         </androidx.cardview.widget.CardView>
 
         <TextView
