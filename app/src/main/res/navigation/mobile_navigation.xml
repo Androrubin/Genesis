@@ -16,7 +16,11 @@
         android:name="com.androrubin.genesis.ui.community.CommunityFragment"
         android:label="@string/title_community"
         tools:layout="@layout/fragment_community" />
-
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.androrubin.genesis.Authentication."
+        android:label="@string/title_community"
+        tools:layout="@layout/fragment_community" />
 
     <fragment
         android:id="@+id/navigation_notifications"

@@ -19,6 +19,12 @@
         android:theme="@style/Theme.Genesis"
         tools:targetApi="31">
         <activity
+            android:name=".Authentication.MainActivity_2"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Camera"
+            android:exported="false" />
+        <activity
             android:name=".NutriComparision"
             android:exported="false" />
         <activity
@@ -43,11 +49,11 @@
             android:name=".login_and_splash.CreateProfile"
             android:exported="false" />
 
-        <service android:name=".ui.home.trackers.RightTimerService"/>
+        <service android:name=".ui.home.trackers.RightTimerService" />
+
         <activity
             android:name=".ui.aid.book_appointment.BookAppointmentActivity"
             android:exported="false" />
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -70,12 +76,9 @@
         <activity
             android:name=".Onboarding.AboutApp"
             android:exported="false" />
-
         <activity
             android:name=".ui.home.trackers.BreastFeedingTrackerActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".login_and_splash.SignUpActivity"
             android:exported="false" />
