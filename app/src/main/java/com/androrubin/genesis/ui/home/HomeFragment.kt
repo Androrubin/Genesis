@@ -22,15 +22,14 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private  lateinit var mAuth : FirebaseAuth
     private  lateinit var db : FirebaseFirestore
-
-
+    private  var progressBar: Int = 0
 
    // private lateinit var activity: CreateProfile
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private var progressBar = 0
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +42,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
+        progressBar = 0
         db= FirebaseFirestore.getInstance()
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser

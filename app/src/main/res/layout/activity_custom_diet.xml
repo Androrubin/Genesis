@@ -8,7 +8,7 @@
     tools:context=".CustomDiet">
 
     <TextView
-        android:id="@+id/phase_name"
+        android:id="@+id/text2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -16,7 +16,7 @@
         android:layout_marginTop="28dp"
         android:padding="4dp"
         android:text="Breakfast"
-        android:textColor="@color/text_color"
+        android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phase_name">
+        app:layout_constraintTop_toBottomOf="@id/text2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -414,9 +414,11 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/scroll_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

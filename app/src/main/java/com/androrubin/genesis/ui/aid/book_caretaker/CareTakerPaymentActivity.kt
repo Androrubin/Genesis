@@ -40,14 +40,14 @@ class CareTakerPaymentActivity : AppCompatActivity() {
         binding.radioButton.setOnClickListener {
 
             if (binding.radioButton2.isChecked) {
-                radioButton2.isChecked = false
+                binding.radioButton2.isChecked = false
             }
             binding.textView53.text = "₹ 2000"
         }
 
         binding.radioButton2.setOnClickListener {
             if (binding.radioButton.isChecked) {
-                radioButton.isChecked = false
+                binding.radioButton.isChecked = false
             }
 
             binding.textView53.text = "₹ 2400"
@@ -56,7 +56,7 @@ class CareTakerPaymentActivity : AppCompatActivity() {
 
         binding.makePaymentBtn.setOnClickListener {
 
-            if (textView53.text != "₹ 0") {
+            if (binding.textView53.text != "₹ 0") {
 
                 val data = hashMapOf(
 
@@ -81,9 +81,9 @@ class CareTakerPaymentActivity : AppCompatActivity() {
                     }
 
                 startActivity(
-                    Intent(this, AppointmentBookingConfirmationActivity::class.java)
-                        .putExtra("DoctorName", doctorNameTv.text.toString())
-                        .putExtra("Date", dateTimeTV.text.toString())
+                    Intent(this, CareTakerBookingConfirmationActivity::class.java)
+                        .putExtra("DoctorName", binding.doctorNameTv.text.toString())
+                        .putExtra("Date",binding.dateTimeTV.text.toString())
                         .putExtra("Specialization", sp)
                 )
                 finish()

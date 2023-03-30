@@ -5,16 +5,16 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.androrubin.genesis.databinding.ActivityScheduleAppointmentBinding
-import com.androrubin.genesis.databinding.ActivityScheduleCareTakerBinding
+import com.androrubin.genesis.databinding.ActivityScheduleCaretakerBinding
 import java.time.LocalDateTime
 
 
 class ScheduleCareTaker : AppCompatActivity() {
-    private lateinit var binding :  ActivityScheduleCareTakerBinding
+    private lateinit var binding :  ActivityScheduleCaretakerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityScheduleCareTakerBinding.inflate(layoutInflater)
+        binding = ActivityScheduleCaretakerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 

@@ -91,7 +91,6 @@ class CommunityFragment : Fragment() {
                             intent.putExtra("description",postList[position].description)
                             intent.putExtra("date",postList[position].date)
                             intent.putExtra("upvotes",postList[position].upvotes)
-                            intent.putExtra("downvotes",postList[position].downvotes)
                             intent.putExtra("comments",postList[position].comments+" Comments")
                             startActivity(intent)
                         }
