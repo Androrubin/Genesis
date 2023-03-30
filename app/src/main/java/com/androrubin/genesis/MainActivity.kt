@@ -18,6 +18,7 @@ import com.androrubin.genesis.login_and_splash.LoginActivity
 import com.androrubin.genesis.side_nav_frags.DiaryFragment
 import com.androrubin.genesis.side_nav_frags.InfoFragment
 import com.androrubin.genesis.side_nav_frags.ProfileFragment2
+import com.androrubin.genesis.ui.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -39,6 +40,14 @@ class MainActivity : AppCompatActivity() {
 
 
         val navView: BottomNavigationView = binding.navView
+
+        val intent=getIntent()
+        val week_c= intent?.getStringExtra("week_count")
+
+//        val fragment = HomeFragment()
+//         val bundle=Bundle()
+//        bundle.putString("weekCount",week_c)
+//        fragment.arguments= bundle
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each

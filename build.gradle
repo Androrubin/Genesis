@@ -3,6 +3,7 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url 'https://jitpack.io' }
+        maven{url 'https://mapbox.bintray.com/mapbox'}
     }
 
     ext.kotlin_version = '1.6.21'

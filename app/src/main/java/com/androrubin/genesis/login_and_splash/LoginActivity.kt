@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEventsLogger
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
     companion object {
@@ -32,9 +33,11 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var mCallbackManager: CallbackManager
     private lateinit var fbButton: LoginButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
 
         FacebookSdk.sdkInitialize(this)
 
-
+        db = FirebaseFirestore.getInstance()
         fbButton = findViewById(R.id.face_book)
 //        fbButton.setBackgroundResource(R.drawable.face2)
 //        fbButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
@@ -82,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         firebaseAuth = FirebaseAuth.getInstance()
+
 
         binding.phoneAuth.setOnClickListener {
             val intent = Intent(this, EnterPhoneNoActivity::class.java)
@@ -213,15 +217,32 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
 
+        val currentUser = firebaseAuth.currentUser
+        val name = currentUser?.displayName
+        val uid = currentUser?.uid
 
-        if (user != null) {
+        db = FirebaseFirestore.getInstance()
+        db.collection("Users").document("$name")
+            .get()
+            .addOnSuccessListener {
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+                //Returns value of corresponding field
+                val user = it["ProfileCreated"].toString()
 
-        } else {
-            Toast.makeText(this, "Please sign in to continue", Toast.LENGTH_SHORT).show()
-        }
+                if (user=="1") {
+
+                    val dashboardIntent = Intent(this, MainActivity::class.java)
+                    startActivity(dashboardIntent)
+                    finish()
+
+                }
+                else {
+
+                    val dashboardIntent = Intent(this,CreateProfile::class.java)
+                    startActivity(dashboardIntent)
+                    finish()
+                }
+            }
 
     }
 
