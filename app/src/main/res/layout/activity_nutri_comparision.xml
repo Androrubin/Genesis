@@ -6,95 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".NutriComparision">
 
+
+
+
+
+
     <LinearLayout
-        android:id="@+id/table"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:orientation="vertical"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card1">
+    android:id="@+id/table"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginEnd="30dp"
+    android:orientation="horizontal"
+    android:padding="15dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/card1">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender"
-            android:orientation="horizontal"
-            android:padding="6dp">
+            android:orientation="vertical"
+            >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/lavender"
                 android:text="Nutrients"
+                android:padding="4dp"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:gravity="end"
-                android:text="Your Diet"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:gravity="end"
-                android:text="Recommended"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="3dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Carbohydrate"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/carb_yd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginStart="30dp"
-                android:text="1200 mg"
+                android:padding="4dp"
                 android:textColor="@color/black" />
             <TextView
-                android:id="@+id/carb_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:padding="4dp"
+                android:background="@color/lavender2"
+                android:textColor="@color/black" />
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="27mg"
-                android:layout_marginStart="30dp"
+                android:text="fat"
+                android:padding="4dp"
                 android:textColor="@color/black" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender2"
-            android:orientation="horizontal"
-            android:padding="3dp">
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:background="@color/lavender"
+                android:text="Your Diet"
+                android:padding="4dp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/carb_yd"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Protein"
+                android:layout_marginStart="30dp"
+                android:text="1200 mg"
+                android:gravity="center"
+                android:padding="4dp"
                 android:textColor="@color/black" />
 
             <TextView
@@ -104,46 +95,70 @@
                 android:layout_marginStart="30dp"
                 android:gravity="end"
                 android:text="600-800 mg"
-                android:textColor="@color/black" />
-            <TextView
-                android:id="@+id/pro_rec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="27mg"
-                android:layout_marginStart="30dp"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="3dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="fat"
+                android:padding="4dp"
+                android:background="@color/lavender2"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/fat_yd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:text="27mg"
+                android:padding="4dp"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:gravity="end"
+                android:background="@color/lavender"
+                android:text="Recommended"
+                android:padding="4dp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/carb_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="27mg"
+                android:padding="4dp"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/pro_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="27mg"
+                android:padding="4dp"
+                android:background="@color/lavender2"
+                android:layout_marginStart="30dp"
                 android:textColor="@color/black" />
             <TextView
                 android:id="@+id/fat_rec"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
+                android:gravity="center"
                 android:text="27mg"
+                android:padding="4dp"
                 android:layout_marginStart="30dp"
                 android:textColor="@color/black" />
+
+
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -159,7 +174,7 @@
         android:layout_marginEnd="30dp"
         android:padding="4dp"
         android:text="Your planned diet includes..."
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
