@@ -26,6 +26,11 @@
     <color name="lavender2">#668F94E4</color>
     <color name="base_color">#9292FF</color>
     <color name="colorPrimary">#919191</color>
+    <color name="text_color">#3F334E</color>
+    <color name="text_dark">#303030</color>
+    <color name="orange">#FF9B6A</color>
+    <color name="back_blue">#B2B2FF</color>
+    <color name="light_orange">#5BFF9B6A</color>
 
 
 </resources>

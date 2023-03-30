@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.androrubin.genesis.R
-import com.github.sundeepk.compactcalendarview.CompactCalendarView
-import com.github.sundeepk.compactcalendarview.domain.Event
 import com.google.firebase.database.collection.LLRBNode
 import kotlinx.android.synthetic.main.activity_calendar.*
 import java.text.SimpleDateFormat

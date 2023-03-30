@@ -1,15 +1,15 @@
 package com.androrubin.genesis.login_and_splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.androrubin.genesis.MainActivity
 import com.androrubin.genesis.R
 import com.androrubin.genesis.databinding.ActivityCreateProfileBinding
+import com.androrubin.genesis.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_create_profile.*
@@ -29,6 +29,7 @@ class CreateProfile : AppCompatActivity() {
         private lateinit var db:FirebaseFirestore
         private lateinit var mAuth: FirebaseAuth
         lateinit var gender_text:String
+       // lateinit var week_count_text:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,8 @@ class CreateProfile : AppCompatActivity() {
         setContentView(binding.root)
 
         gender_text ="female"
+
+       // week_count_text=binding.weekCount.text.toString()
 
 
 
@@ -65,9 +68,12 @@ class CreateProfile : AppCompatActivity() {
 
         val edtName = findViewById<EditText>(R.id.edtName)
         val edtAge = findViewById<EditText>(R.id.edtAge)
+        val  edtWeek = findViewById<EditText>(R.id.week_count)
 
 
         val btnSave = findViewById<Button>(R.id.btnSave)
+
+
 
 
 
@@ -80,13 +86,18 @@ class CreateProfile : AppCompatActivity() {
                 edtAge.setError("Field cannot be empty")
                 edtAge.requestFocus()
             }
+            else  if (TextUtils.isEmpty(edtWeek.getText()?.trim().toString())) {
+                edtAge.setError("Field cannot be empty")
+                edtAge.requestFocus()
+            }
             else{
 
                 val data= hashMapOf(
 
                     "Name" to edtName.text.trim().toString(),
                     "Age" to edtAge.text.trim().toString(),
-                    "Pregnancy Week " to  gender_text.trim(),
+                    "Gender" to gender_text.trim(),
+                    "Pregnancy Week" to edtWeek.text.trim().toString() ,
                     "Child's Age" to binding.yearText.text.trim().toString(),
                     "ProfileCreated" to "1"
 
@@ -101,11 +112,21 @@ class CreateProfile : AppCompatActivity() {
                         Log.w("Data Addition", "Error adding document", e)
                     }
 
-                startActivity(Intent(this, MainActivity::class.java))
+//                val bundle = Bundle()
+//                bundle.putString("weekCount", week_count_text)
+//
+//                val fragobj = HomeFragment()
+//                fragobj.setArguments(bundle)
+
+                val intent= Intent(this, MainActivity::class.java)
+           //     intent.putExtra("week_count",binding.weekCount.text.toString())
+                startActivity(intent)
                 finish()
             }
         }
 
 
     }
+
+
 }
