@@ -19,28 +19,37 @@
         android:theme="@style/Theme.Genesis"
         tools:targetApi="31">
         <activity
-            android:name=".ScheduleAppointmentActivity"
+            android:name=".login_and_splash.ChildAgeCount"
             android:exported="false" />
         <activity
-            android:name=".AppointmentPaymentActivity"
+            android:name=".login_and_splash.WeekCountActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentPaymentBookingCoonfirmationActivity"
+            android:name=".ui.aid.book_appointment.BookAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.aid.book_appointment.AppointmentPaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.aid.book_appointment.AppointmentBookingConfirmationActivity"
             android:exported="false" />
         <activity
             android:name=".ArticleViewActivity"
             android:exported="false" />
         <activity
-            android:name=".CaretakerPaymentActivity"
+            android:name=".ui.aid.book_appointment.ScheduleAppointment"
             android:exported="false" />
         <activity
-            android:name=".CaretakerBookingConfirmationActivity"
+            android:name=".ui.aid.book_caretaker.BookCareTakerActivity"
             android:exported="false" />
         <activity
-            android:name=".BookCaretakerActivity"
+            android:name=".ui.aid.book_caretaker.CareTakerBookingConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".ScheduleCaretakerActivity"
+            android:name=".ui.aid.book_caretaker.CareTakerPaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.aid.book_caretaker.ScheduleCareTaker"
             android:exported="false" />
         <activity
             android:name=".NutriComparision"
@@ -68,10 +77,6 @@
             android:exported="false" />
 
         <service android:name=".ui.home.trackers.RightTimerService" />
-
-        <activity
-            android:name=".ui.aid.book_appointment.BookAppointmentActivity"
-            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
         db.collection("Users").document("$uid")
             .get()
             .addOnSuccessListener  {
-                   week_count = it["Pregnancy Week"].toString()
+                   week_count = it["Week Count"].toString()
                 Toast.makeText(context," $week_count",Toast.LENGTH_LONG).show()
 
 

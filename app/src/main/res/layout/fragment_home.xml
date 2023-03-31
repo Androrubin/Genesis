@@ -8,9 +8,127 @@
     tools:context=".ui.home.HomeFragment">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
 
         <TextView
@@ -28,7 +146,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
 
 
         <LinearLayout
@@ -37,7 +156,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phase_name">
+            app:layout_constraintTop_toBottomOf="@+id/phase_name"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/phase_name2"
@@ -75,10 +195,11 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+            app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+            android:visibility="gone">
 
             <TextView
-                android:id="@+id/week_count"
+                android:id="@+id/child_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -99,9 +220,9 @@
                 android:textColor="@color/text_color"
                 android:textSize="20dp"
 
-                app:layout_constraintBottom_toBottomOf="@+id/week_count"
-                app:layout_constraintStart_toEndOf="@+id/week_count"
-                app:layout_constraintTop_toTopOf="@+id/week_count" />
+                app:layout_constraintBottom_toBottomOf="@+id/child_age"
+                app:layout_constraintStart_toEndOf="@+id/child_age"
+                app:layout_constraintTop_toTopOf="@+id/child_age" />
 
             <TextView
                 android:id="@+id/day_count"
@@ -143,7 +264,8 @@
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout3">
+            app:layout_constraintTop_toBottomOf="@id/linearLayout3"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/baby_switch"
@@ -151,7 +273,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_back_blue"
                 android:gravity="center_vertical"
-                android:text="Read more"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Baby"
                 android:textColor="@color/white"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -177,7 +301,8 @@
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mother_baby">
+            app:layout_constraintTop_toBottomOf="@+id/mother_baby"
+            android:visibility="gone">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -202,7 +327,8 @@
                     android:progress="50"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView12"
+                    android:visibility="gone"/>
 
                 <ImageView
                     android:id="@+id/imageView12"
@@ -276,7 +402,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imageView15">
+                    app:layout_constraintTop_toBottomOf="@id/imageView15"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/baby_text"
@@ -520,7 +647,8 @@
             android:orientation="horizontal"
             android:padding="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_prog">
+            app:layout_constraintTop_toBottomOf="@id/card_prog"
+            android:visibility="gone">
 
 
             <androidx.cardview.widget.CardView
@@ -602,7 +730,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/trackers">
+            app:layout_constraintTop_toBottomOf="@id/trackers"
+            android:visibility="gone">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -755,7 +884,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/card1">
+            app:layout_constraintTop_toBottomOf="@id/card1"
+            android:visibility="gone">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -908,7 +1038,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/card2">
+            app:layout_constraintTop_toBottomOf="@id/card2"
+            android:visibility="gone"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -1057,6 +1189,553 @@
         </androidx.cardview.widget.CardView>
 
 
+        <LinearLayout
+            android:id="@+id/trackers_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/card_bf"
+                android:layout_width="114dp"
+                android:layout_height="194dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="40dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/breast_feeding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/breast_feeding"
+                    tools:layout_editor_absoluteX="51dp"
+                    tools:layout_editor_absoluteY="169dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/card_exer"
+                android:layout_width="114dp"
+                android:layout_height="194dp"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="40dp"
+                app:layout_constraintStart_toEndOf="@+id/card_bf">
+
+                <ImageView
+                    android:id="@+id/exer_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/exer_card"
+                    tools:layout_editor_absoluteX="51dp"
+                    tools:layout_editor_absoluteY="169dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/card_vac2"
+                android:layout_width="114dp"
+                android:layout_height="194dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/lavender"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card_exer"
+                app:layout_constraintTop_toBottomOf="@+id/card_prog">
+
+                <ImageView
+                    android:id="@+id/img_vac2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/vac"
+                    tools:layout_editor_absoluteX="51dp"
+                    tools:layout_editor_absoluteY="169dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_after1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/trackers_after">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/doc_img_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/doc_img"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="69dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout1_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img_after"
+                        android:layout_toRightOf="@+id/doc_img_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Dr Amelia"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Gynecologist  |  7 years"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout2_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linear_layout1_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img_after"
+                        android:layout_toRightOf="@+id/doc_img_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+
+                            android:text="Posted on 21 March"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/linear_layout1_after"
+                        android:padding="2dp"
+                        android:src="@drawable/baseline_bookmark_24" />
+
+                    <ImageView
+                        android:id="@+id/img_mom_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/doc_img_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/mom1" />
+
+                    <TextView
+                        android:id="@+id/check_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/btn_background_black"
+                        android:padding="8dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="Read more"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/head_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Reducing health disparities around pregnancy"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/rl_after"
+                    app:layout_constraintStart_toStartOf="@id/rl_after"
+                    app:layout_constraintTop_toBottomOf="@id/rl_after" />
+
+                <TextView
+                    android:id="@+id/des_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Despite many medical advances and improvements in maternal health care, significant health disparities...."
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@id/head_after"
+                    app:layout_constraintStart_toStartOf="@id/head_after"
+                    app:layout_constraintTop_toBottomOf="@id/head_after" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/card_after1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl2_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/doc_img2_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/doc4"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="69dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout3_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img2_after"
+                        android:layout_toRightOf="@+id/doc_img2_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Dr Elna"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Pediatrician  |  4 years"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout4_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linear_layout3_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img2_after"
+                        android:layout_toRightOf="@+id/doc_img2_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+
+                            android:text="Posted on 16 March"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/linear_layout3_after"
+                        android:padding="2dp"
+                        android:src="@drawable/baseline_bookmark_24" />
+
+
+                    <ImageView
+                        android:id="@+id/img_mom2_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/doc_img2_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/mother2" />
+
+                    <TextView
+                        android:id="@+id/check2_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/btn_background_black"
+                        android:padding="8dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="Read more"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/head2_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Reducing health disparities around pregnancy"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/rl2_after"
+                    app:layout_constraintStart_toStartOf="@id/rl2_after"
+                    app:layout_constraintTop_toBottomOf="@id/rl2_after" />
+
+                <TextView
+                    android:id="@+id/des2_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Despite many medical advances and improvements in maternal health care, significant health disparities...."
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@id/head2_after"
+                    app:layout_constraintStart_toStartOf="@id/head2_after"
+                    app:layout_constraintTop_toBottomOf="@id/head2_after" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/card2_after"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl3_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/doc_img3_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/doc3"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="69dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout5_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img3_after"
+                        android:layout_toRightOf="@+id/doc_img3_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Dr Elna"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Gyneacologist  |  9 years"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_layout6_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linear_layout5_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/doc_img3_after"
+                        android:layout_toRightOf="@+id/doc_img3_after"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+
+                            android:text="Posted 2 weeks ago "
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_mom3_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/doc_img3_after"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/mother3" />
+
+                    <TextView
+                        android:id="@+id/check3_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/btn_background_black"
+                        android:padding="8dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="Read more"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/linear_layout5_after"
+                        android:padding="2dp"
+                        android:src="@drawable/baseline_bookmark_24" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/head3_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Reducing health disparities around pregnancy"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/rl3_after"
+                    app:layout_constraintStart_toStartOf="@id/rl3_after"
+                    app:layout_constraintTop_toBottomOf="@id/rl3_after" />
+
+                <TextView
+                    android:id="@+id/des3_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:text="Despite many medical advances and improvements in maternal health care, significant health disparities...."
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@id/head3_after"
+                    app:layout_constraintStart_toStartOf="@id/head3_after"
+                    app:layout_constraintTop_toBottomOf="@id/head3_after" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </ScrollView>
