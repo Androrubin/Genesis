@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.androrubin.genesis.R
 import com.google.firebase.database.collection.LLRBNode
-import kotlinx.android.synthetic.main.activity_calendar.*
 import java.text.SimpleDateFormat
 import java.time.Month
 import java.time.MonthDay

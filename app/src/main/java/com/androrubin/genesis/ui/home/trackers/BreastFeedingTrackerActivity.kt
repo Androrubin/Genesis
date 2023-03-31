@@ -13,7 +13,6 @@ import com.androrubin.genesis.R
 import com.androrubin.genesis.databinding.ActivityBreastFeedingTrackerBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_breast_feeding_tracker.*
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import kotlin.math.roundToInt
@@ -105,9 +104,9 @@ class BreastFeedingTrackerActivity : AppCompatActivity() {
 
                 val data = hashMapOf(
 
-                    "Left Reading" to leftTimerBtn.text.trim().toString(),
-                    "Right Reading" to rightTimerBtn.text.trim().toString(),
-                    "Total Reading " to totalTimerTV.text.trim().toString(),
+                    "Left Reading" to binding.leftTimerBtn.text.trim().toString(),
+                    "Right Reading" to binding.rightTimerBtn.text.trim().toString(),
+                    "Total Reading " to binding.totalTimerTV.text.trim().toString(),
                     "Date" to binding.dateTv.text.trim().toString(),
                     "Time" to binding.timeTv.text.trim().toString()
 
@@ -175,8 +174,8 @@ private fun resetAction() {
     stopRightTimer()
     binding.rightTimerBtn.text = timeStringFromLong(0)
 
-    leftStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
-    rightStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
+    binding.leftStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
+    binding.rightStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
 }
 
 private fun stopLeftTimer() {
@@ -193,7 +192,7 @@ private fun startStopAction() {
     if (dataHelper.leftTimerCounting()) {
         dataHelper.setLeftStopTime(Date())
         binding.progressBar.pauseAnimation()
-        leftStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
+        binding.leftStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
         stopLeftTimer()
     } else {
         if (dataHelper.stopLeftTime() != null) {
@@ -204,7 +203,7 @@ private fun startStopAction() {
             dataHelper.setLeftStartTime(Date())
             binding.progressBar.playAnimation()
         }
-        leftStartBtn.setImageResource(R.drawable.baseline_pause_24)
+        binding.leftStartBtn.setImageResource(R.drawable.baseline_pause_24)
         startLeftTimer()
     }
 }
@@ -228,7 +227,7 @@ private fun startRightTimer() {
 private fun rightStartStopAction() {
     if (dataHelper.rightTimerCounting()) {
         dataHelper.setRightStopTime(Date())
-        rightStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
+        binding.rightStartBtn.setImageResource(R.drawable.baseline_play_arrow_24)
         binding.progressBar2.pauseAnimation()
         stopRightTimer()
     } else {
@@ -240,7 +239,7 @@ private fun rightStartStopAction() {
             dataHelper.setRightStartTime(Date())
             binding.progressBar2.playAnimation()
         }
-        rightStartBtn.setImageResource(R.drawable.baseline_pause_24)
+        binding.rightStartBtn.setImageResource(R.drawable.baseline_pause_24)
         startRightTimer()
     }
 }

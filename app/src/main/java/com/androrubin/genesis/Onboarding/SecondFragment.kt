@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
-import kotlinx.android.synthetic.main.fragment_second.view.*
+
 
 
 class SecondFragment : Fragment() {
@@ -20,12 +21,14 @@ class SecondFragment : Fragment() {
         val view= inflater.inflate(R.layout.fragment_second, container, false)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
+        val next2 = view.findViewById<ImageView>(R.id.next2)
+        val prev = view.findViewById<ImageView>(R.id.prev)
 
-        view.next2.setOnClickListener {
+        next2.setOnClickListener {
             viewPager?.currentItem=2
 
         }
-        view.prev.setOnClickListener {
+        prev.setOnClickListener {
             viewPager?.currentItem=0
 
         }

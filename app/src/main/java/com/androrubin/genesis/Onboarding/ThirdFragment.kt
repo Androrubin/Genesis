@@ -5,11 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
-import kotlinx.android.synthetic.main.fragment_second.view.*
-import kotlinx.android.synthetic.main.fragment_third.view.prev
-import kotlinx.android.synthetic.main.fragment_third.view.*
+
 
 
 class ThirdFragment : Fragment() {
@@ -22,12 +21,13 @@ class ThirdFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-
-        view.next3.setOnClickListener {
+        val next3 = view.findViewById<ImageView>(R.id.next3)
+        val prev = view.findViewById<ImageView>(R.id.prev)
+        next3.setOnClickListener {
             viewPager?.currentItem=3
 
         }
-        view.prev.setOnClickListener {
+        prev.setOnClickListener {
             viewPager?.currentItem=1
 
         }

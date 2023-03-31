@@ -6,9 +6,10 @@ buildscript {
         maven{url 'https://mapbox.bintray.com/mapbox'}
     }
 
-    ext.kotlin_version = '1.6.21'
+    ext.kotlin_version = '1.0.0'
     dependencies {
         classpath 'com.google.gms:google-services:4.3.15'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
 
     }
 

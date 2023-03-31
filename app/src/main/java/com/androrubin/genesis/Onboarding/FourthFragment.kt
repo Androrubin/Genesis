@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
-import kotlinx.android.synthetic.main.fragment_fourth.view.*
 
 
 
@@ -23,14 +23,14 @@ class FourthFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_fourth, container, false)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-
-        view.next4.setOnClickListener {
+        val next4= view.findViewById<ImageView>(R.id.next4)
+        val prev = view.findViewById<ImageView>(R.id.prev)
+        next4.setOnClickListener {
             viewPager?.currentItem=4
 
         }
-        view.prev.setOnClickListener {
+        prev.setOnClickListener {
             viewPager?.currentItem=2
-
         }
 
         return view

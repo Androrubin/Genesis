@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
-import kotlinx.android.synthetic.main.fragment_first.view.*
-import kotlinx.android.synthetic.main.fragment_view_pager.*
+
 
 
 class FirstFragment : Fragment() {
@@ -22,11 +24,14 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_first, container, false)
 
-        view.next1.setOnClickListener {
-            viewPager?.currentItem=1
+        val next1 = view.findViewById<ImageView>(R.id.next1)
+        val skip = view.findViewById<ImageView>(R.id.skip)
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
+        next1.setOnClickListener {
+            viewPager?.currentItem =1
 
         }
-        view.skip.setOnClickListener {
+        skip.setOnClickListener {
 
             findNavController().navigate(R.id.action_viewPagerFragment_to_loginActivity)
             onBoardingFinished()

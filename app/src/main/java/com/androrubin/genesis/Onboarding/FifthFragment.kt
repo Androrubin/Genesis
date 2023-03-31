@@ -6,14 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
-import kotlinx.android.synthetic.main.fragment_fifth.view.*
 
 
 class FifthFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,13 +24,15 @@ class FifthFragment : Fragment() {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-        view.next5.setOnClickListener {
+        val next5 = view.findViewById<ImageView>(R.id.next5)
+        next5.setOnClickListener {
 
             findNavController().navigate(R.id.action_viewPagerFragment_to_loginActivity)
             onBoardingFinished()
 
         }
-        view.prev.setOnClickListener {
+        val prev = view.findViewById<TextView>(R.id.prev)
+        prev.setOnClickListener {
             viewPager?.currentItem=3
 
         }

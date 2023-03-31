@@ -12,7 +12,6 @@ import com.androrubin.genesis.databinding.ActivityCreateProfileBinding
 import com.androrubin.genesis.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_create_profile.*
 
 class CreateProfile : AppCompatActivity() {
 
@@ -41,22 +40,6 @@ class CreateProfile : AppCompatActivity() {
 
        // week_count_text=binding.weekCount.text.toString()
 
-
-
-        binding.genderBtnGrp.setOnCheckedChangeListener{ group, checkedId->
-
-            if(checkedId==R.id.male) {
-                gender_text = male.text.toString()
-
-            }
-            else if(checkedId==R.id.female)
-                gender_text=female.text.toString()
-
-            else
-                gender_text="Prefer not to say"
-
-            Toast.makeText(this,"Gender=$gender_text",Toast.LENGTH_SHORT).show()
-        }
 
 
 
