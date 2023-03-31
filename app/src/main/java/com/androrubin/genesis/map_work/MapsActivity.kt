@@ -20,7 +20,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.JsonObject
 
-import kotlinx.android.synthetic.main.activity_maps.*
 import org.checkerframework.checker.nullness.qual.NonNull
 import retrofit2.Call
 import retrofit2.Callback

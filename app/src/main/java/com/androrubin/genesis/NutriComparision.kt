@@ -15,7 +15,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.diet_item.*
 
 class NutriComparision : AppCompatActivity() {
     private lateinit var binding: ActivityNutriComparisionBinding

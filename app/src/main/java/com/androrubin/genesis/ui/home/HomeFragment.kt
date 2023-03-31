@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.androrubin.genesis.DietPlanning
+import com.androrubin.genesis.chatBot.ChatBotActivity
 import com.androrubin.genesis.databinding.FragmentHomeBinding
 import com.androrubin.genesis.journaling.GetJournal
 import com.google.firebase.auth.FirebaseAuth
@@ -82,6 +83,10 @@ class HomeFragment : Fragment() {
         binding.cardJourn1.setOnClickListener {
             val intent = Intent(context,GetJournal::class.java)
             startActivity(intent)
+        }
+
+        binding.imageButton.setOnClickListener {
+            startActivity(Intent(context, ChatBotActivity::class.java))
         }
 
 

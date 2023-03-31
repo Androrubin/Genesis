@@ -8,11 +8,11 @@ import android.widget.Toast
 import com.androrubin.genesis.databinding.ActivityAppointmentPaymentBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_appointment_payment.*
+
 
 class AppointmentPaymentActivity : AppCompatActivity() {
 
-    private lateinit var db:FirebaseFirestore
+    private lateinit var db: FirebaseFirestore
     private lateinit var mAuth: FirebaseAuth
 
     private lateinit var binding: ActivityAppointmentPaymentBinding
@@ -33,24 +33,22 @@ class AppointmentPaymentActivity : AppCompatActivity() {
         binding.yoeTV.text = yoe
         binding.timeTv.text = time
 
-        mAuth= FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
         val name = currentUser?.displayName
         val uid = currentUser?.uid
 
         binding.radioButton.setOnClickListener {
 
-            if(binding.radioButton2.isChecked)
-            {
-                radioButton2.isChecked = false
+            if (binding.radioButton2.isChecked) {
+                binding.radioButton2.isChecked = false
             }
             binding.textView53.text = "₹ 2000"
         }
 
         binding.radioButton2.setOnClickListener {
-            if(binding.radioButton.isChecked)
-            {
-                radioButton.isChecked = false
+            if (binding.radioButton.isChecked) {
+                binding.radioButton.isChecked = false
             }
 
             binding.textView53.text = "₹ 2400"
@@ -59,7 +57,7 @@ class AppointmentPaymentActivity : AppCompatActivity() {
 
         binding.makePaymentBtn.setOnClickListener {
 
-            if (textView53.text != "₹ 0") {
+            if (binding.textView53.text != "₹ 0") {
 
                 val data = hashMapOf(
 
@@ -85,8 +83,8 @@ class AppointmentPaymentActivity : AppCompatActivity() {
 
                 startActivity(
                     Intent(this, AppointmentBookingConfirmationActivity::class.java)
-                        .putExtra("DoctorName", doctorNameTv.text.toString())
-                        .putExtra("Date", dateTimeTV.text.toString())
+                        .putExtra("DoctorName", binding.doctorNameTv.text.toString())
+                        .putExtra("Date", binding.dateTimeTV.text.toString())
                         .putExtra("Specialization", sp)
                 )
                 finish()

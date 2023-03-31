@@ -1,13 +1,16 @@
 package com.androrubin.genesis.ui.community
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.androrubin.genesis.MainActivity
 import com.androrubin.genesis.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,6 +29,12 @@ class CreatePostActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val uid = mAuth.currentUser?.uid
 
+        mAuth = FirebaseAuth.getInstance()
+        val user = mAuth.currentUser
+
+
+
+
         val time = Calendar.getInstance().time
         val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:SS")
         val current = formatter.format(time)
@@ -34,6 +43,22 @@ class CreatePostActivity : AppCompatActivity() {
         val postBtn = findViewById<TextView>(R.id.post_Btn)
         val posterName = findViewById<TextView>(R.id.posterName)
         val postDescription = findViewById<EditText>(R.id.postDescriptionEdt)
+
+        if (user != null)
+        {
+            val name = user.uid
+            db = FirebaseFirestore.getInstance()
+            db.collection("Users").document("$name")
+                .get()
+                .addOnSuccessListener {
+
+                    //Returns value of corresponding field
+                    val b = it["Name"].toString()
+
+                    posterName.text = b
+
+                }
+        }
 
         closeBtn.setOnClickListener {
             onBackPressed()
