@@ -426,6 +426,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageVew13">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons_lay1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp">
@@ -458,7 +459,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/firasans_semibold"
-                        android:text="Dr Shyna"
+                        android:text="Mrs Divya"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintStart_toEndOf="@+id/imageViw14"
@@ -471,7 +472,7 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="3dp"
                         android:fontFamily="@font/firasans_regular"
-                        android:text="Booked Appointment"
+                        android:text="Expert In - Baby Massage"
                         android:textColor="@color/black"
                         android:textSize="11sp"
                         app:layout_constraintStart_toEndOf="@+id/imageViw14"
@@ -483,7 +484,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:fontFamily="@font/firasans_regular"
-                        android:text="Gynecologist |  7 years"
+                        android:text="Experience |  7 years"
                         android:textColor="@color/black"
                         app:layout_constraintBottom_toBottomOf="@+id/textViw23"
                         app:layout_constraintStart_toEndOf="@+id/textViw23"
@@ -525,7 +526,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/firasans_regular"
-                        android:text="Tuesday 28th March    3PM - 4PM"
+                        android:text="Timing    10AM - 6PM"
                         android:textColor="#B9000000"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="@+id/imageViw16"
@@ -538,7 +539,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/firasans_semibold"
-                        android:text="Dr Aarti"
+                        android:text="Miss Nidhi"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintStart_toEndOf="@+id/imageViw20"
@@ -551,9 +552,9 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="3dp"
                         android:fontFamily="@font/firasans_regular"
-                        android:text="Appointed on March 20"
+                        android:text="Timing 9AM - 6PM"
                         android:textColor="@color/black"
-                        android:textSize="11sp"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@+id/imageViw20"
                         app:layout_constraintTop_toBottomOf="@+id/textViw27" />
 
@@ -563,7 +564,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:fontFamily="@font/firasans_regular"
-                        android:text="Gynecologist |  4 years"
+                        android:text="Experience |  4 years"
                         android:textColor="@color/black"
                         app:layout_constraintBottom_toBottomOf="@+id/textViw27"
                         app:layout_constraintStart_toEndOf="@+id/textViw27"
@@ -599,20 +600,88 @@
                         app:layout_constraintStart_toStartOf="@+id/textViw24"
                         app:layout_constraintTop_toBottomOf="@+id/textViw24" />
 
-                    <TextView
-                        android:id="@+id/textViw32"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:fontFamily="@font/firasans_regular"
-                        android:text="Tuesday 28th March    3PM - 4PM"
-                        android:textColor="#B9000000"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageViw16"
-                        app:layout_constraintStart_toEndOf="@+id/imageViw16" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textViw20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/firasans_semibold"
+                android:text="Video Tutorials for baby care"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViw2" />
+            <ImageView
+                android:id="@+id/imageVew14"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/baby_tut"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViw20" />
+
+            <ImageView
+                android:id="@+id/imageView34"
+                android:layout_width="101dp"
+                android:layout_height="65dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageVew14"
+                app:layout_constraintEnd_toEndOf="@+id/imageVew14"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/imageVew14"
+                app:layout_constraintTop_toBottomOf="@+id/imageVew14"
+                app:layout_constraintTop_toTopOf="@+id/imageVew14"
+                app:srcCompat="@drawable/baseline_play_circle_24" />
+
+            <TextView
+                android:id="@+id/textViw65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/firasans_regular"
+                android:text="Checkout to see"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageVew14" />
+
+            <TextView
+                android:id="@+id/textViw66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/firasans_regular"
+                android:text="How to hold your baby in correct manner.\nHow to wash your baby.\nHow to ensure your baby's head shape remains round"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.253"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViw65" />
+
+            <TextView
+                android:id="@+id/read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/button_background_rounded"
+                android:backgroundTint="@color/lavender"
+                android:fontFamily="@font/firasans_semibold"
+                android:padding="8dp"
+                android:text="Read more"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/textViw66"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -173,13 +173,9 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d("LoginActivity", "signInWithCredential:success")
-
-                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
+                    updateUI()
+                        }
+                 else {
                     // If sign in fails, display a message to the user
                     Log.w("LoginActivity", "signInWithCredential:failure", task.exception)
                 }
@@ -203,8 +199,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(ContentValues.TAG, "signInWithCredential:success")
-                    val user = firebaseAuth.currentUser
-                    updateUI(user)
+                    updateUI()
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
@@ -212,19 +207,18 @@ class LoginActivity : AppCompatActivity() {
                         this, "Authentication failed.",
                         Toast.LENGTH_SHORT
                     ).show()
-                    updateUI(null)
+                    updateUI()
                 }
             }
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+    private fun updateUI() {
 
         val currentUser = firebaseAuth.currentUser
-        val name = currentUser?.displayName
         val uid = currentUser?.uid
 
         db = FirebaseFirestore.getInstance()
-        db.collection("Users").document("$name")
+        db.collection("Users").document("$uid")
             .get()
             .addOnSuccessListener {
 

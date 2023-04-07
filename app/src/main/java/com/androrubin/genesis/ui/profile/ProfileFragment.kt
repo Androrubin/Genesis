@@ -41,17 +41,6 @@ class ProfileFragment : Fragment() {
 
         auth= FirebaseAuth.getInstance()
 
-        binding.jounalBtn.setOnClickListener {
-            val intent= Intent(context, GetJournal::class.java)
-            startActivity(intent)
-        }
-
-        binding.logout.setOnClickListener {
-            auth.signOut()
-            val intent= Intent(context, LoginActivity::class.java)
-            startActivity(intent)
-            finishAffinity(MainActivity())
-        }
         return  view
     }
 
