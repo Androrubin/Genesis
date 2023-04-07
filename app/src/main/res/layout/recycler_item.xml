@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".Exercise">
+    android:layout_height="wrap_content">
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="@dimen/dim_16"
         android:id="@+id/pink_card"
@@ -21,7 +20,6 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-
     <TextView
         android:id="@+id/yoga_name"
         android:layout_width="wrap_content"
@@ -30,16 +28,18 @@
         android:elevation="@dimen/dim_16"
         android:text="Bhadrasan"
         android:textColor="#FFF"
-        android:textSize="24sp"
+        android:textSize="22sp"
 
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/yoga_details"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/pink_card"
         app:layout_constraintTop_toTopOf="@id/pink_card" />
 
     <TextView
         android:id="@+id/yoga_details"
         app:layout_constraintStart_toStartOf="@id/pink_card"
-        app:layout_constraintEnd_toStartOf="@id/yoga_image"
+        app:layout_constraintEnd_toStartOf="@id/yoga_image_card"
         android:layout_margin="16dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,18 +47,26 @@
         android:text="Yogasan things"
         android:textColor="#FFF"
         app:layout_constraintTop_toBottomOf="@id/yoga_name" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/yoga_image_card"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/pink_card"
+        app:layout_constraintTop_toTopOf="@id/pink_card"
+        android:elevation="4dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@id/pink_card">
     <ImageView
         android:contentDescription="@string/sos"
         android:id="@+id/yoga_image"
-        app:layout_constraintBottom_toBottomOf="@id/pink_card"
-        app:layout_constraintTop_toTopOf="@id/pink_card"
-        android:elevation="24dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="@id/pink_card"
         android:src="@drawable/work"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="120dp"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent"
         />
+    </androidx.cardview.widget.CardView>
 
 
 

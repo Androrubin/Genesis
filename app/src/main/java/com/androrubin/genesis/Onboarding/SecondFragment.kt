@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.androrubin.genesis.R
 
@@ -22,7 +23,7 @@ class SecondFragment : Fragment() {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
         val next2 = view.findViewById<ImageView>(R.id.next2)
-        val prev = view.findViewById<ImageView>(R.id.prev)
+        val prev = view.findViewById<TextView>(R.id.prev)
 
         next2.setOnClickListener {
             viewPager?.currentItem=2

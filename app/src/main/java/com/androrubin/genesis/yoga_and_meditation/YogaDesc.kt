@@ -31,7 +31,7 @@ class YogaDesc : AppCompatActivity() {
         val YogaDetails=intent.getStringExtra("Detail")
         val YogaImage=intent.getIntExtra("ImageId", R.drawable.a)
         val yogaName=findViewById<TextView>(R.id.text_yoga)
-        val yogaDetail=findViewById<TextView>(R.id.yoga_details)
+        val yogaDetail=findViewById<TextView>(R.id.yoga_detail)
         val yogaImage=findViewById<ImageView>(R.id.yoga_img)
         yogaName.text=Yoganame
         yogaDetail.text=YogaDetails

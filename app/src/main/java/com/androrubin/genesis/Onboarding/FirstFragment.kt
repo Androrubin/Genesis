@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
@@ -25,7 +26,7 @@ class FirstFragment : Fragment() {
         val view=inflater.inflate(R.layout.fragment_first, container, false)
 
         val next1 = view.findViewById<ImageView>(R.id.next1)
-        val skip = view.findViewById<ImageView>(R.id.skip)
+        val skip = view.findViewById<TextView>(R.id.skip)
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
         next1.setOnClickListener {
             viewPager?.currentItem =1

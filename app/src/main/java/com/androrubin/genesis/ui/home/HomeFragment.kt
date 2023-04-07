@@ -13,6 +13,8 @@ import com.androrubin.genesis.DietPlanning
 import com.androrubin.genesis.chatBot.ChatBotActivity
 import com.androrubin.genesis.databinding.FragmentHomeBinding
 import com.androrubin.genesis.journaling.GetJournal
+import com.androrubin.genesis.ui.home.trackers.BreastFeedingTrackerActivity
+import com.androrubin.genesis.yoga_and_meditation.Exercise
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -52,14 +54,11 @@ class HomeFragment : Fragment() {
         var week_count=""
 
 
-
-
         db.collection("Users").document("$uid")
             .get()
             .addOnSuccessListener  {
-                   week_count = it["Pregnancy Week"].toString()
+                   week_count = it["Week Count"].toString()
                 Toast.makeText(context," $week_count",Toast.LENGTH_LONG).show()
-
 
                 if (week_count != "") {
 
@@ -97,6 +96,9 @@ class HomeFragment : Fragment() {
             val intent = Intent(context,DietPlanning::class.java)
             startActivity(intent)
 
+        }
+        binding.imgVac.setOnClickListener {
+            startActivity(Intent(context, Exercise::class.java))
         }
         return root
     }

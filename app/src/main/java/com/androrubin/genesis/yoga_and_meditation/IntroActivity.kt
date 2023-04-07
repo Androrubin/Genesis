@@ -14,12 +14,13 @@ import java.security.AccessController.getContext
 class IntroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityIntroBinding
-    val PERMISSION_REQUEST_FOR_CAMERA = 1
+    final val PERMISSION_REQUEST_FOR_CAMERA = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         binding.openCameraBtn.setOnClickListener {
             if(!hasCameraPermission()) requestCameraPermission()
@@ -33,8 +34,7 @@ class IntroActivity : AppCompatActivity() {
         }
     }
 
-    private fun hasCameraPermission() =
-        EasyPermissions.hasPermissions(
+    private fun hasCameraPermission() = EasyPermissions.hasPermissions(
             this,
             android.Manifest.permission.CAMERA
         )
