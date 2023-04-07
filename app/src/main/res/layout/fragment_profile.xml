@@ -33,7 +33,7 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:layout_weight="3"
-          android:text="Mother's Feed"
+          android:text="Mother's Profile"
           android:textColor="@color/black"
           android:textSize="24dp"
           android:fontFamily="@font/firasans_semibold"
