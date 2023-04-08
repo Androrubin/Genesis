@@ -21,7 +21,8 @@ The .apk file produced on building the project will require an Android device/em
 Clone the repository on your device, and build the project using Android Studio and run on the connected Android device/emulator.
 
 ## App architecture
-![Frame 909](https://user-images.githubusercontent.com/92329310/230698797-438505bf-cc1a-4662-9319-e64871137215.png)
+![Frame 909 (1)](https://user-images.githubusercontent.com/92329310/230700292-9d859789-5d31-43b2-8dec-b30d2cb52773.png)
+
 
 
 
